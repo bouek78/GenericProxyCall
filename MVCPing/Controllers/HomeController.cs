@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.ServiceModel;
 using System.Web;
 using System.Web.Mvc;
@@ -45,11 +46,32 @@ namespace MVCPing.Controllers
 
         public ActionResult Ping2()
         {
+            Assembly ass = Assembly.GetAssembly(typeof(IPingService));
+            object s = CallInterfaceFromAssembly(ass);
 
 
-
-
-            return null;
+            return View("Ping", s);
         }
+
+        private string CallInterfaceFromAssembly(Assembly ass)
+        {
+            if (ass == null ) return String.Empty;
+
+            var names = (from type in ass.GetTypes()
+                         from method in type.GetMethods(
+                           BindingFlags.Public | BindingFlags.NonPublic |
+                           BindingFlags.Instance | BindingFlags.Static)
+                         select method).Where(x => x.Name == "Ping").ToList();
+
+            string r = string.Empty;
+            foreach (MethodInfo name in names)
+            {
+                r += name.Name;
+            }
+
+
+            return r;
+        }
+
     }
 }
