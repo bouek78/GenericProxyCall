@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Web;
 using System.Web.Mvc;
+using WcfPing;
 
 namespace MVCPing.Controllers
 {
@@ -29,10 +31,25 @@ namespace MVCPing.Controllers
 
         public ActionResult Ping()
         {
-            
+            BasicHttpBinding myBinding = new BasicHttpBinding();
+            EndpointAddress myEndpoint = new EndpointAddress("http://localhost:51620/PingService.svc");
+            ChannelFactory<IPingService> myChannelFactory = new ChannelFactory<IPingService>(myBinding, myEndpoint);
+
+            IPingService instance = myChannelFactory.CreateChannel();
+            // Call Service.
+            object s = instance.Ping();
+            myChannelFactory.Close();
+
+            return View(s);
+        }
+
+        public ActionResult Ping2()
+        {
 
 
-            return View();
+
+
+            return null;
         }
     }
 }
