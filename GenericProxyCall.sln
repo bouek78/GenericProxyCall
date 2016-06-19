@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfPing", "WcfPing\WcfPing.csproj", "{160E73A9-4933-4BA5-9CC2-3C1F0FB775D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCPing", "MVCPing\MVCPing.csproj", "{0A7D9761-C088-4C46-A248-39ED7B4031A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfPing.Contract", "WcfPing.Contract\WcfPing.Contract.csproj", "{B3160695-3603-43E6-93BF-D5D5FD983D62}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{160E73A9-4933-4BA5-9CC2-3C1F0FB775D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{160E73A9-4933-4BA5-9CC2-3C1F0FB775D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{160E73A9-4933-4BA5-9CC2-3C1F0FB775D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{160E73A9-4933-4BA5-9CC2-3C1F0FB775D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A7D9761-C088-4C46-A248-39ED7B4031A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A7D9761-C088-4C46-A248-39ED7B4031A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A7D9761-C088-4C46-A248-39ED7B4031A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A7D9761-C088-4C46-A248-39ED7B4031A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3160695-3603-43E6-93BF-D5D5FD983D62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3160695-3603-43E6-93BF-D5D5FD983D62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3160695-3603-43E6-93BF-D5D5FD983D62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3160695-3603-43E6-93BF-D5D5FD983D62}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
