@@ -47,8 +47,17 @@ namespace MVCPing.Controllers
         public ActionResult Ping2()
         {
             Assembly ass = Assembly.GetAssembly(typeof(IPingService));
-            object s = CallInterfaceFromAssembly(ass);
+           //object s = CallInterfaceFromAssembly(ass);
 
+            string endPoint = "http://localhost:51620/PingService.svc";
+
+            //string interfaceName = "ExperimentConsoleApp.ITest";
+            Type myInterfaceType = typeof(IPingService); //Type.GetType(interfaceName);
+            var factoryType = typeof(ChannelFactory<>).MakeGenericType(myInterfaceType);
+            dynamic factory = Activator.CreateInstance(factoryType, new object[] { new BasicHttpBinding(), new EndpointAddress(endPoint) });
+            dynamic channel = factory.CreateChannel();
+
+            object s = channel.Ping();
 
             return View("Ping", s);
         }
